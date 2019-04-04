@@ -35,8 +35,15 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/ex.o \
+	${OBJECTDIR}/ex5\ aula\ 4.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/newmain.o
+	${OBJECTDIR}/newmain.o \
+	${OBJECTDIR}/newmain1.o \
+	${OBJECTDIR}/test1.o \
+	${OBJECTDIR}/test2.o \
+	${OBJECTDIR}/test3\ while.o \
+	${OBJECTDIR}/test4.o
 
 
 # C Compiler Flags
@@ -63,6 +70,17 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/exerc_cios_mari: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/exerc_cios_mari ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/ex.o: ex.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ex.o ex.c
+
+.NO_PARALLEL:${OBJECTDIR}/ex5\ aula\ 4.o
+${OBJECTDIR}/ex5\ aula\ 4.o: ex5\ aula\ 4.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ex5\ aula\ 4.o ex5\ aula\ 4.c
+
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -72,6 +90,32 @@ ${OBJECTDIR}/newmain.o: newmain.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/newmain.o newmain.c
+
+${OBJECTDIR}/newmain1.o: newmain1.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/newmain1.o newmain1.c
+
+${OBJECTDIR}/test1.o: test1.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test1.o test1.c
+
+${OBJECTDIR}/test2.o: test2.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test2.o test2.c
+
+.NO_PARALLEL:${OBJECTDIR}/test3\ while.o
+${OBJECTDIR}/test3\ while.o: test3\ while.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test3\ while.o test3\ while.c
+
+${OBJECTDIR}/test4.o: test4.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test4.o test4.c
 
 # Subprojects
 .build-subprojects:

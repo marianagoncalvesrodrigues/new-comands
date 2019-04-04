@@ -1,14 +1,20 @@
 
+
 #include <stdio.h>
 #include <stdlib.h>
 
-int numero = 100; 
-int main() {
-    while (numero<=100 && numero>=0) {
+int numero=1;
+
+
+int main(int argc, char** argv) {
+    while (numero<=500) {
+        if(numero%5==0){
             printf("valor do numero é: %i \n", numero);
-            numero--;
+        }
+        numero++;
     }
-   
+ 
+
 
     return (EXIT_SUCCESS);
 }
